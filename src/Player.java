@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Player extends Actor {
 
-    public void act() {
+    /*public void act() {
         performMovement();
     }
 
@@ -38,7 +38,7 @@ public class Player extends Actor {
             move(1);
 
         }
-    }
+    }*/
 
 
 

@@ -1,3 +1,4 @@
+import com.pholser.junit.quickcheck.internal.Items;
 import greenfoot.*;
 
 import java.util.List;
@@ -8,12 +9,14 @@ import java.util.List;
  * @version 1.0
  */
 public class Player extends MovingActor {
+    private InventoryVisualizer inventory;
+
 
 
 
     private int life = 100;
 
-    private Item[] items = new Item[5];
+    private Item[] items = new Item[10];
 
     public int getLife() {
         return life;
@@ -28,6 +31,10 @@ public class Player extends MovingActor {
         if (teachers.size() > 0) {
             teachers.get(0).hit(10);
         }
+    }
+    protected void addedToWorld(World world){
+        inventory= new InventoryVisualizer(items);
+        world.addObject(inventory,10,world.getHeight()-1);
     }
 
     public void hit(int damage) {
@@ -90,7 +97,7 @@ public class Player extends MovingActor {
         }
     }
 
-    
+
 
 
 }

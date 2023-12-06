@@ -1,2 +1,2 @@
-public class Chest extends Object{
+public class Chest extends Item {
 }

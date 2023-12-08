@@ -20,7 +20,7 @@ public class TestWorld extends World
         //setBackground("./images/cell.jpg");
         setBackground("./images/Boden_1.jpg");
         setPaintOrder(Player.class);
-        addObject(new Player(), 0,0);
+        addObject(new Player(), 0,1);
 
         addObject(new Chair(),1,1);
         addObject(new Chair(),1,2);
@@ -41,6 +41,16 @@ public class TestWorld extends World
         addObject(new ChairDown(),14,4);
 
         addObject(new Board(),15,4);
+
+        addObject(new Door(),13,0);
+
+        addObject(new Wall(),15,0);
+        addObject(new Wall(),14,0);
+
+        for(int i=0; i<13; i++) {
+            Wall wall = new Wall();
+            addObject(wall, i, 0);
+        }
     }
     
 }

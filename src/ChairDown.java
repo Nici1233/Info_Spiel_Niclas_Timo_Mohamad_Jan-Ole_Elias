@@ -1,4 +1,4 @@
 import greenfoot.Actor;
 
-public class ChairDown extends Actor {
+public class ChairDown extends Blockers {
 }

@@ -1,5 +1,4 @@
 #Greenfoot project file
 class.Player.image=./images/Player/WEST.png
-
 project.charset=windows-1252
 simulation.speed=30

@@ -30,7 +30,7 @@ public class InventoryVisualizer extends Actor {
 
     private InventorySlot createItemSlot(int i) {
         InventorySlot slot = new InventorySlot();
-        getWorld().addObject(slot, i, getY());
+        getWorld().addObject(slot, i+getX(), getY());
         return slot;
     }
 

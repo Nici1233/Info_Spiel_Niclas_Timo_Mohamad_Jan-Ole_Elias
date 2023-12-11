@@ -16,7 +16,7 @@ public class Player extends MovingActor {
 
     private int life = 100;
 
-    private Item[] items = new Item[10];
+    private Item[] items = new Item[4];
 
     public int getLife() {
         return life;
@@ -34,7 +34,7 @@ public class Player extends MovingActor {
     }
     protected void addedToWorld(World world){
         inventory= new InventoryVisualizer(items);
-        world.addObject(inventory,10,world.getHeight()-1);
+        world.addObject(inventory,6,world.getHeight()-1);
     }
 
     public void hit(int damage) {
@@ -43,7 +43,7 @@ public class Player extends MovingActor {
     }
 
 
-    public void use(){
+    public void pick(){
         World myWorld = getWorld();
         List<Item> objectlist = myWorld.getObjectsAt(getX(), getY(), Item.class);
         if (objectlist.size() > 0) {
@@ -86,7 +86,7 @@ public class Player extends MovingActor {
             move();
         }
         if (Greenfoot.isKeyDown("E")) {
-            use();
+            pick();
         }
     }
 

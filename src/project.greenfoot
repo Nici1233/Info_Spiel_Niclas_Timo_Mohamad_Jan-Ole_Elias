@@ -1,4 +1,9 @@
 #Greenfoot project file
-class.Player.image=./images/Player/WEST.png
+class.Player.image=./images/Player/WEST0_1.png
+class.Chair.image=./images/Chair.png
+class.ChairDown.image=./images/ChairDown.png
+class.Door.image=./images/DoorClose.png
+class.Board.image=./images/Board2.png
+class.Wall.image=./images/Floor.png
 project.charset=windows-1252
 simulation.speed=30

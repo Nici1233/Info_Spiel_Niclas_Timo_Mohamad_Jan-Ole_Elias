@@ -6,5 +6,7 @@ class.Door.image=./images/DoorClose.png
 class.Board.image=./images/Board2.png
 class.Wall.image=./images/Floor.png
 class.Key.image=./images/Key2.png
+class.Pizza.image=./images/Pizza.png
+class.Mug.image=./images/Mug.png
 project.charset=windows-1252
 simulation.speed=30

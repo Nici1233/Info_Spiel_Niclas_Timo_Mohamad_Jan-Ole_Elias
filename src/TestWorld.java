@@ -49,6 +49,8 @@ public class TestWorld extends World
 
         addObject(new Key(), 14, 4);
 
+
+
         for(int i=0; i<13; i++) {
             Wall wall = new Wall();
             addObject(wall, i, 0);

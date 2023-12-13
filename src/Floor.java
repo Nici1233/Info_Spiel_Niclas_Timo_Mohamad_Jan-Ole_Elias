@@ -6,7 +6,7 @@ import greenfoot.World;
  * @author SAE
  * @version 1.0
  */
-public class Floor extends MasterLevel
+public class Floor extends World
 {
 
 
@@ -18,20 +18,20 @@ public class Floor extends MasterLevel
     {
 
 
-        super();
+        super(16,4,60);
         setBackground("./images/Boden_4.jpg");
         setPaintOrder(Player.class);
-        addObject(new Player(), 13, 4);
+        addObject(new Player(), 13, 3);
 
 
-        addObject(new Door(), 13, 4);
+        addObject(new Door(), 13, 3);
 
-        addObject(new Wall(), 15, 4);
-        addObject(new Wall(), 14, 4);
+        addObject(new Wall(), 15, 3);
+        addObject(new Wall(), 14, 3);
 
         for (int i = 0; i < 13; i++) {
             Wall wall = new Wall();
-            addObject(wall, i, 4);
+            addObject(wall, i, 3);
         }
         addObject(new Wall(), 0, 0);
         for (int i = 2; i < 16; i++) {

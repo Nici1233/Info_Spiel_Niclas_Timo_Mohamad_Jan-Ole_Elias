@@ -70,6 +70,7 @@ public class Player extends MovingActor {
             turn(Direction.NORTH);
             move();
 
+
         }
         if (Greenfoot.isKeyDown("A")) {
             turn(Direction.WEST);
@@ -88,6 +89,10 @@ public class Player extends MovingActor {
         if (Greenfoot.isKeyDown("E")) {
             pick();
         }
+        if (Greenfoot.isKeyDown("O")&& getX()== 13 && getY()==0){
+            Floor level = new Floor();
+            Greenfoot.setWorld(level);
+        }
     }
 
     public void move() {
@@ -96,6 +101,7 @@ public class Player extends MovingActor {
 
         }
     }
+
 
 
 

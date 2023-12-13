@@ -8,5 +8,7 @@ class.Wall.image=./images/Floor.png
 class.Key.image=./images/Key2.png
 class.Pizza.image=./images/Pizza.png
 class.Mug.image=./images/Mug.png
+class.Window.image=./images/Window.png
+class.Table.image=./images/Table2.png
 project.charset=windows-1252
 simulation.speed=30

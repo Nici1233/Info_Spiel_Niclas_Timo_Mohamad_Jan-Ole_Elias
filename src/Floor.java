@@ -25,24 +25,25 @@ public class Floor extends World
 
 
         addObject(new Door(), 13, 3);
+        addObject(new Door(), 1, 3);
+        addObject(new Wall(),16,3);
+        addObject(new Wall(),14,3);
 
-        addObject(new Wall(), 15, 3);
-        addObject(new Wall(), 14, 3);
-
-        for (int i = 0; i < 13; i++) {
+        for (int i = 2; i < 13; i++) {
             Wall wall = new Wall();
             addObject(wall, i, 3);
         }
-        addObject(new Wall(), 0, 0);
-        for (int i = 2; i < 16; i++) {
+
+        for (int i = 0; i < 16; i++) {
             Wall wall = new Wall();
             addObject(wall, i, 0);
         }
 
-        addObject(new Wall(), 0, 2);
-        addObject(new Wall(), 0, 1);
+        for (int i = 0; i < 4; i++) {
+            Wall wall = new Wall();
+            addObject(wall, 0, i);
+        }
 
-        addObject(new Door(), 1, 0);
 
     }
 

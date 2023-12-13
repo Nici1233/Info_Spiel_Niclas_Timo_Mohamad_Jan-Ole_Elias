@@ -93,7 +93,7 @@ public class Player extends MovingActor {
             Floor level = new Floor();
             Greenfoot.setWorld(level);
         }
-        if (Greenfoot.isKeyDown("O")&& getX()== 1 && getY()==0){
+        if (Greenfoot.isKeyDown("O")&& getX()== 1 && getY()==3){
             Office level = new Office();
             Greenfoot.setWorld(level);
         }

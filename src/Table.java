@@ -1,2 +1,2 @@
-public class Table extends Item{
+public class Table extends Blockers{
 }

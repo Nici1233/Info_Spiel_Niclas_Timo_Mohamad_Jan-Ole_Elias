@@ -1,2 +1,2 @@
-public class Pizza extends Item{
+public class Pizza extends Blockers {
 }

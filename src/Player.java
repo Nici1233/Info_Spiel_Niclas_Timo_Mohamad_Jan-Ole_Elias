@@ -16,7 +16,7 @@ public class Player extends MovingActor {
 
     private int life = 100;
 
-    private Item[] keys = new Item[4];
+    private Item[] items = new Item[4];
 
     public int getLife() {
         return life;
@@ -33,7 +33,7 @@ public class Player extends MovingActor {
         }
     }
     protected void addedToWorld(World world){
-        inventory= new InventoryVisualizer(keys);
+        inventory= new InventoryVisualizer(items);
         world.addObject(inventory,6,world.getHeight()-1);
     }
 
@@ -45,14 +45,14 @@ public class Player extends MovingActor {
 
     public void keyPick(){
         World myWorld = getWorld();
-        List<Key> objectlist = myWorld.getObjectsAt(getX() +1, getY(), Key.class);
+        List<Item> objectlist = myWorld.getObjectsAt(getX() +1, getY(), Item.class);
         if (objectlist.size() > 0) {
-            Key key = objectlist.get(0);
-            for (int i = 0; i < keys.length; i++) {
-                if (keys[i] == null){
-                    keys[i] = key;
-                    myWorld.removeObject(key);
-                    i=keys.length;
+            Item item = objectlist.get(0);
+            for (int i = 0; i < items.length; i++) {
+                if (items[i] == null){
+                    items[i] = item;
+                    myWorld.removeObject(item);
+                    i=items.length;
                 }
             }
         }

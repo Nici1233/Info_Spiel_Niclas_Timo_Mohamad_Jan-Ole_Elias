@@ -1,2 +1,2 @@
-public class Window extends Item{
+public class Window extends Blockers {
 }

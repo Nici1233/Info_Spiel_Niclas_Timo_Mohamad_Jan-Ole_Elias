@@ -1,2 +1,2 @@
-public class Mug extends Item{
+public class Mug extends Blockers {
 }

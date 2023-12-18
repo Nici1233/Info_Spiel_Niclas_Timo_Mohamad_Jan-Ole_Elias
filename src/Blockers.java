@@ -1,4 +1,4 @@
-public class Blockers extends Item {
+public class Blockers extends ImprovedActor {
 
     Blockers(){
 

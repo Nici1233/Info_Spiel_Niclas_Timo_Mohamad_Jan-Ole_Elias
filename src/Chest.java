@@ -1,2 +1,2 @@
-public class Chest extends Item {
+public class Chest extends Blockers {
 }

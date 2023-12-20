@@ -9,6 +9,8 @@ import java.util.List;
  * @version 1.0
  */
 public class Player extends MovingActor {
+
+
     private InventoryVisualizer inventory;
 
 
@@ -75,12 +77,10 @@ public class Player extends MovingActor {
         if (Greenfoot.isKeyDown("A")) {
             turn(Direction.WEST);
             move();
-
         }
         if (Greenfoot.isKeyDown("S")) {
             turn(Direction.SOUTH);
             move();
-
         }
         if (Greenfoot.isKeyDown("D")) {
             turn(Direction.EAST);
@@ -95,6 +95,14 @@ public class Player extends MovingActor {
         }
         if (Greenfoot.isKeyDown("O")&& getX()== 1 && getY()==3){
             Office level = new Office();
+            Greenfoot.setWorld(level);
+        }
+        if (Greenfoot.isKeyDown("O")&& getX()== 13 && getY()==3){
+            TestWorld level = new TestWorld();
+            Greenfoot.setWorld(level);
+        }
+        if (Greenfoot.isKeyDown("O")&& getX()== 1 && getY()==5){
+            Floor level = new Floor();
             Greenfoot.setWorld(level);
         }
     }

@@ -1,5 +1,5 @@
 import greenfoot.Actor;
 
-public class Door extends Blockers {
+public class Door extends Item {
 }
 

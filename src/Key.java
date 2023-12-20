@@ -1,2 +1,2 @@
-public class Key extends Item {
+public class Key extends Pickable {
 }

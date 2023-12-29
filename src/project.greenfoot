@@ -10,5 +10,6 @@ class.Pizza.image=./images/Pizza.png
 class.Mug.image=./images/Mug.png
 class.Window.image=./images/Window.png
 class.Table.image=./images/Table2.png
+class.Chest.image=./images/Chest_02_02_2.png
 project.charset=windows-1252
 simulation.speed=30

@@ -3,7 +3,7 @@ import greenfoot.World;
 
 import java.util.List;
 
-public class InventoryVisualizer extends Actor {
+public class InventoryVisualizer extends Blockers {
 
     private final InventorySlot[] slots;
     private final Actor[] inventory;

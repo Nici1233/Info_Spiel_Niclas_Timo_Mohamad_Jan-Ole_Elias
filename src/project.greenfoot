@@ -3,6 +3,7 @@ class.Player.image=./images/Player/WEST0_1.png
 class.Chair.image=./images/Chair.png
 class.ChairDown.image=./images/ChairDown.png
 class.Door.image=./images/DoorClose.png
+class.FakeDoor.image=./images/DoorClose.png
 class.Board.image=./images/Board2.png
 class.Wall.image=./images/Floor.png
 class.Key.image=./images/Key2.png

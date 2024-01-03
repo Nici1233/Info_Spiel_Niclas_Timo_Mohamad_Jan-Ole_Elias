@@ -12,16 +12,16 @@ public class Player extends MovingActor {
 
 
     private InventoryVisualizer inventory;
-//private ChestPuzzle puzzle1;
+private ChestPuzzle puzzle1;
 
 
 
     private int life = 100;
 
     private Pickable[] pickables = new Pickable[4];
-    /*public Player(){
+    public Player(){
         puzzle1 = new ChestPuzzle();
-    }*/
+    }
 
     public int getLife() {
         return life;
@@ -67,6 +67,21 @@ public class Player extends MovingActor {
         }
     }
 
+    public boolean checkKey(){
+        World myWorld = getWorld();
+        for (int i = 0; i < pickables.length; i++) {
+            if (pickables[i] != null) {
+                Pickable pickable = pickables[i];
+                pickables[i] = null;
+                i = pickables.length;
+                return true;
+
+            }
+
+        }return false;
+
+    }
+
     public void useDoor(){
         World myWorld = getWorld();
         List<Door> objectlist = myWorld.getObjectsAt(getX() , getY() , Door.class);
@@ -77,19 +92,23 @@ public class Player extends MovingActor {
     }
 
     public void goToNextWorld(){
-        if(getWorld().getClass().equals(TestWorld.class)) {
+        if(getWorld().getClass().equals(TestWorld.class) && checkKey()) {
             Greenfoot.setWorld(new Floor());
         }
         if(getWorld().getClass().equals(Floor.class)) {
             Greenfoot.setWorld(new Office());
         }
-        if(getWorld().getClass().equals(Office.class)) {
+        if(getWorld().getClass().equals(Office.class) && checkKey()) {
             Greenfoot.setWorld(new Yard());
         }
 
+        /*if(getWorld().getClass().equals(Yard.class) && checkKey()) {
+            Greenfoot.setWorld(new Floor2());
+        }*/
+
     }
 
-    /*public void useChest(){
+    public void useChest(){
         World myWorld = getWorld();
         List<Chest> objectlist = myWorld.getObjectsAt(getNextX(1) ,getNextY(1),Chest.class);
         if (objectlist.size() > 0) {
@@ -104,7 +123,7 @@ public class Player extends MovingActor {
 
         }
 
-    }*/
+    }
 
     public boolean query(int solution, String task) {
 
@@ -116,34 +135,12 @@ public class Player extends MovingActor {
         return false;
     }
 
-    private void spawnKey() {
-        World world = getWorld();
-        world.addObject(new Key(), getX(), getY()); // Annahme: Es gibt eine Key-Klasse
-    }
-
-    private void checkInput() {
-        if (Greenfoot.isKeyDown("enter")) {
-            String input = Greenfoot.ask("Gib die Zahlenkombination ein:");
-
-            if (input != null && input.equals("113")) {
-                getWorld().showText("Zahlenkombination richtig!", getWorld().getWidth() / 2, getWorld().getHeight() / 2);
-                spawnKey();
-            } else {
-                getWorld().showText("Falsche Zahl. Versuche es erneut.", getWorld().getWidth() / 2, getWorld().getHeight() / 2);
-            }
-        }
-
-
-    }
-
 
 
 
     public void act() {
         performMovement();
-        checkInput();
     }
-
 
     private void performMovement() {
         if (Greenfoot.isKeyDown("W")) {
@@ -167,13 +164,8 @@ public class Player extends MovingActor {
         if (Greenfoot.isKeyDown("E")) {
             keyPick();
             useDoor();
-            //useChest();
+            useChest();
         }
-
-
-
-
-
         /*if (Greenfoot.isKeyDown("O")){
 
             if (getX()== 13 && getY()==0) {

@@ -1,15 +1,12 @@
-import greenfoot.World;
+import greenfoot.*;
 
-public class Office extends World
-{
-
+public class Office extends World {
 
 
-    public Office()
-    {
+    public Office() {
 
 
-        super(8,6,60);
+        super(8, 6, 60);
         setBackground("./images/Boden_1.jpg");
         setPaintOrder(Player.class);
         addObject(new Player(), 1, 5);
@@ -17,18 +14,20 @@ public class Office extends World
             Wall wall = new Wall();
             addObject(wall, i, 6);
         }
-        addObject(new ChairDown(),5,1);
+        addObject(new ChairDown(), 5, 1);
 
-        addObject(new Table(),5,3);
+        addObject(new Table(), 5, 3);
 
-        addObject(new Mug(),5,3);
+        addObject(new Mug(), 5, 3);
 
-        addObject(new Pizza(),6,3);
+        addObject(new Pizza(), 6, 3);
 
         addObject(new Door(), 1, 5);
 
-        addObject(new Window(),2,0);
-        addObject(new Window(),3,0);
+        addObject(new Window(), 2, 0);
+        addObject(new Window(), 3, 0);
+        // Add the button to the world at a specific location
+
 
 
         for (int i = 0; i < 6; i++) {
@@ -47,13 +46,13 @@ public class Office extends World
 
 
         addObject(new Wall(), 1, 0);
-/*
+
         addObject(new Wall(), 0, 2);
         addObject(new Wall(), 0, 1);
 
-        addObject(new Door(), 1, 0);*/
+        addObject(new Door(), 1, 0);
 
     }
-
-
 }
+
+

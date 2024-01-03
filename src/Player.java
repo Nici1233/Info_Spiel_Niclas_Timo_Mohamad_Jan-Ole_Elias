@@ -12,16 +12,16 @@ public class Player extends MovingActor {
 
 
     private InventoryVisualizer inventory;
-private ChestPuzzle puzzle1;
+//private ChestPuzzle puzzle1;
 
 
 
     private int life = 100;
 
     private Pickable[] pickables = new Pickable[4];
-    public Player(){
+    /*public Player(){
         puzzle1 = new ChestPuzzle();
-    }
+    }*/
 
     public int getLife() {
         return life;
@@ -89,7 +89,7 @@ private ChestPuzzle puzzle1;
 
     }
 
-    public void useChest(){
+    /*public void useChest(){
         World myWorld = getWorld();
         List<Chest> objectlist = myWorld.getObjectsAt(getNextX(1) ,getNextY(1),Chest.class);
         if (objectlist.size() > 0) {
@@ -104,7 +104,7 @@ private ChestPuzzle puzzle1;
 
         }
 
-    }
+    }*/
 
     public boolean query(int solution, String task) {
 
@@ -116,12 +116,34 @@ private ChestPuzzle puzzle1;
         return false;
     }
 
+    private void spawnKey() {
+        World world = getWorld();
+        world.addObject(new Key(), getX(), getY()); // Annahme: Es gibt eine Key-Klasse
+    }
+
+    private void checkInput() {
+        if (Greenfoot.isKeyDown("enter")) {
+            String input = Greenfoot.ask("Gib die Zahlenkombination ein:");
+
+            if (input != null && input.equals("113")) {
+                getWorld().showText("Zahlenkombination richtig!", getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+                spawnKey();
+            } else {
+                getWorld().showText("Falsche Zahl. Versuche es erneut.", getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+            }
+        }
+
+
+    }
+
 
 
 
     public void act() {
         performMovement();
+        checkInput();
     }
+
 
     private void performMovement() {
         if (Greenfoot.isKeyDown("W")) {
@@ -145,8 +167,13 @@ private ChestPuzzle puzzle1;
         if (Greenfoot.isKeyDown("E")) {
             keyPick();
             useDoor();
-            useChest();
+            //useChest();
         }
+
+
+
+
+
         /*if (Greenfoot.isKeyDown("O")){
 
             if (getX()== 13 && getY()==0) {

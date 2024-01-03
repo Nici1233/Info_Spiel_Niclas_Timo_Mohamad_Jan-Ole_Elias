@@ -51,6 +51,8 @@ public class TestWorld extends World
 
 
 
+
+
         for(int i=0; i<13; i++) {
             Wall wall = new Wall();
             addObject(wall, i, 0);

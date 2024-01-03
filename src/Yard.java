@@ -8,7 +8,7 @@ public class Yard extends World {
         setBackground("./images/concrete_Floor_3v.png");
         setPaintOrder(Player.class);
         addObject(new Player(), 0,1);
-        addObject(new Chest(), 8,0);
+        //addObject(new Chest(), 8,0);
     }
 
 }

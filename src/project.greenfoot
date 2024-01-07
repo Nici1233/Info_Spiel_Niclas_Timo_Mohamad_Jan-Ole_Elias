@@ -12,5 +12,7 @@ class.Mug.image=./images/Mug.png
 class.Window.image=./images/Window.png
 class.Table.image=./images/Table2.png
 class.Chest.image=./images/Chest_02_02_2.png
+class.Teacher.image=./images/Teacher.png
+class.Pickaxt.image=./images/Pickaxe.png
 project.charset=windows-1252
 simulation.speed=30

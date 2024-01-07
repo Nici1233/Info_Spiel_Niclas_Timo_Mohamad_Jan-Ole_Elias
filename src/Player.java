@@ -12,16 +12,17 @@ public class Player extends MovingActor {
 
 
     private InventoryVisualizer inventory;
-private ChestPuzzle puzzle1;
+    //private ChestPuzzle puzzle1;
 
-
+    private int vaultlife;
 
     private int life = 100;
 
     private Pickable[] pickables = new Pickable[4];
-    public Player(){
+
+    /*public Player(){
         puzzle1 = new ChestPuzzle();
-    }
+    }*/
 
     public int getLife() {
         return life;
@@ -68,6 +69,20 @@ private ChestPuzzle puzzle1;
     }
 
     public boolean checkKey(){
+        World myWorld = getWorld();
+        for (int i = 0; i < pickables.length; i++) {
+            if (pickables[i] != null) {
+                Pickable pickable = pickables[i];
+                pickables[i] = null;
+                i = pickables.length;
+                return true;
+
+            }
+
+        }return false;
+
+    }
+    public boolean checkPickaxe(){
         World myWorld = getWorld();
         for (int i = 0; i < pickables.length; i++) {
             if (pickables[i] != null) {
@@ -134,6 +149,27 @@ private ChestPuzzle puzzle1;
         }
         return false;
     }
+
+
+    public void vaultHit(){
+        List<Vault> vaults = getNeighbours(1,true,Vault.class);
+        if (vaults.size() > 0 && checkPickaxe()){
+            vaults.get(0).hit(10);
+        }
+    }
+
+    /*public void destroyVault() {
+        World myWorld = getWorld();
+        List<Vault> vaults = myWorld.getObjectsAt(getNextX(1), getNextY(1), Vault.class);
+        if (vaultlife < 1) {
+            if (vaults.size() > 0) {
+                Vault vault = vaults.get(0);
+                vault.setVaultLife(vault.getVaultLife() - 1);
+                //if (vault.getVaultLife() <= 0)
+                //myWorld.removeObject(vault);
+            }
+        }
+    }*/
 
 
 

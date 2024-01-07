@@ -1,7 +1,7 @@
-/*public class Chest extends Blockers {
+public class Chest extends Blockers {
 
 
 
 
 
-}*/
+}

@@ -1,6 +1,9 @@
+import greenfoot.Color;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
+import greenfoot.*;
+import greenfoot.GreenfootImage;
 
 import java.io.File;
 import java.io.IOException;
@@ -143,7 +146,7 @@ public class MovingActor extends ImprovedActor {
      * @param text to show
      */
     public void say(boolean text){
-        say(String.valueOf(text));
+        say(String.valueOf(text),4);
     }
 
     /**
@@ -151,7 +154,7 @@ public class MovingActor extends ImprovedActor {
      * @param text to show
      */
     public void say(int text){
-        say(String.valueOf(text));
+        say(String.valueOf(text),4);
     }
 
     /**
@@ -159,24 +162,49 @@ public class MovingActor extends ImprovedActor {
      * @param text to show
      */
     public void say(double text){
-        say(String.valueOf(text));
+        say(String.valueOf(text),4);
     }
 
     /**
      * Shows the given text above the MovingActor
      * @param text to show
      */
-    public void say(String text){
+    public void say(String text, int delay) {
         int y = getY() - 1;
-        if (y < 0){
+        if (y < 0) {
             y = 1;
         }
-        getWorld().showText(text, getX(), y);
+
+        getWorld().showText(text, getX()-3, y);
         System.out.println("a " + this.getClass().getName() + " says: " + text);
-        Greenfoot.delay(4);
-        getWorld().showText("", getX(), y);
+        Greenfoot.delay(delay);
+        getWorld().showText("", getX()-3, y);
 
     }
+    /*public void sayIndividual(String text, int delay, int fontSize) {
+        int y = getY() - 1;
+        if (y < 0) {
+            y = 1;
+        }
+        GreenfootImage textImage = new GreenfootImage(text, fontSize, Color.WHITE, null);
+
+        Font customFont = new Font("Arial", fontSize);
+        textImage.setFont(customFont);
+
+        getWorld().getBackground().drawImage(textImage, getX()- (textImage.getWidth() / 2)+775 , y+215);
+
+        System.out.println("a " + this.getClass().getName() + " says: " + text);
+        Greenfoot.delay(delay);
+        textImage.setColor(new Color(100,0,0,0));
+        getWorld().getBackground().fillRect(getX() - (textImage.getWidth() / 2) + 775, y + 215, textImage.getWidth(), textImage.getHeight());
+       // GreenfootImage textImageEmpty = new GreenfootImage(text, fontSize, Color.WHITE, null);
+        //textImageEmpty.setTransparency(0);
+        //getWorld().getBackground().drawImage(textImageEmpty, getX()- (textImage.getWidth() / 2)+775 , y+215);
+
+    }*/
+
+
+
 
 
     /**

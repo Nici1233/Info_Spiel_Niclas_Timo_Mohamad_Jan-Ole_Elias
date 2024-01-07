@@ -42,20 +42,20 @@ public class TestWorld extends World
 
         addObject(new Board(),13,3);
 
+
+        addObject(new Door(),0,0);
         addObject(new Door(),12,0);
 
         addObject(new Wall(),15,0);
         addObject(new Wall(),14,0);
 
         addObject(new Key(), 12, 3);
-
-
-        //addObject(new Tree(),3,3);
+        addObject(new Teacher(), 11,3 );
 
 
 
 
-        for(int i=0; i<12; i++) {
+        for(int i=1; i<12; i++) {
             Wall wall = new Wall();
             addObject(wall, i, 0);
         }

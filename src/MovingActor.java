@@ -169,13 +169,13 @@ public class MovingActor extends ImprovedActor {
      * Shows the given text above the MovingActor
      * @param text to show
      */
-    public void say(String text, int delay) {
+    public void say(String text, int delay, int xCorrection) {
         int y = getY() - 1;
         if (y < 0) {
             y = 1;
         }
 
-        getWorld().showText(text, getX()-3, y);
+        getWorld().showText(text, getX()-xCorrection, y);
         System.out.println("a " + this.getClass().getName() + " says: " + text);
         Greenfoot.delay(delay);
         getWorld().showText("", getX()-3, y);

@@ -1,4 +1,4 @@
 import greenfoot.Actor;
 
-public class Board extends Blockers {
+public class Board extends Item {
 }

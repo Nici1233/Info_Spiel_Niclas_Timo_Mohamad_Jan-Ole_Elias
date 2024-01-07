@@ -114,7 +114,7 @@ public class Player extends MovingActor {
             Greenfoot.setWorld(new Office());
             startSound("./images/OfficeCall.mp3");
         }
-        if(getWorld().getClass().equals(Office.class) && checkKey()) {
+        if(getWorld().getClass().equals(Office.class) /*&& checkKey()*/) {
             Greenfoot.setWorld(new Yard());
         }
 
@@ -124,32 +124,19 @@ public class Player extends MovingActor {
 
     }
 
-    public void useChest(){
+    public void useChest() {
         World myWorld = getWorld();
-        List<Chest> objectlist = myWorld.getObjectsAt(getNextX(1) ,getNextY(1),Chest.class);
+        List<Chest> objectlist = myWorld.getObjectsAt(getNextX(1), getNextY(1), Chest.class);
         if (objectlist.size() > 0) {
-            if(getWorld().getClass().equals(Yard.class)) {
 
-                while(query(6, "Was ist 3+3?") == false){
-                    System.out.println("Das ist nicht richtig. Versuche es noch einmal!");
-                    query(6, "Was ist 3+3?");
-                }
-                System.out.println("Das ist richtig. Du hast das Schloss genackt!");
+            Chest chest = objectlist.get(0);
+            if(!chest.isChestOpen()) {
+                chest.startPuzzle();
+
             }
-
         }
-
     }
 
-    public boolean query(int solution, String task) {
-
-        String input = Greenfoot.ask(task);
-        int playerNumber = Integer.parseInt(input);
-        if (playerNumber == solution) {
-            return true;
-        }
-        return false;
-    }
 
 
     public void vaultHit(){
@@ -200,6 +187,7 @@ public class Player extends MovingActor {
         }
         if (Greenfoot.isKeyDown("E")) {
             keyPick();
+
             useDoor();
             useChest();
         }

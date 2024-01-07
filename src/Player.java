@@ -112,6 +112,7 @@ public class Player extends MovingActor {
         }
         if(getWorld().getClass().equals(Floor.class)) {
             Greenfoot.setWorld(new Office());
+            startSound("./images/OfficeCall.mp3");
         }
         if(getWorld().getClass().equals(Office.class) && checkKey()) {
             Greenfoot.setWorld(new Yard());
@@ -202,46 +203,6 @@ public class Player extends MovingActor {
             useDoor();
             useChest();
         }
-        /*if (Greenfoot.isKeyDown("O")){
-
-            if (getX()== 13 && getY()==0) {
-                Floor level1 = new Floor();
-                Greenfoot.setWorld(level1);
-            }
-            if (getX()== 1 && getY()==3){
-                Office level2 = new Office();
-                Greenfoot.setWorld(level2);
-            }
-
-            if (getX()== 13 && getY()==3){
-                TestWorld level3 = new TestWorld();
-                Greenfoot.setWorld(level3);
-            }
-
-            if (getX()== 1 && getY()==5){
-                Floor level4 = new Floor();
-                Greenfoot.setWorld(level4);
-            }
-
-            if (getX()== 1 && getY()==5){
-                Floor level5 = new Floor();
-                Greenfoot.setWorld(level5);
-            }
-
-            if (getX()== 3 && getY()==0){
-                Yard level6 = new Yard();
-                Greenfoot.setWorld(level6);
-            }
-
-            //if ()
-        }*/
-
-
-
-
-
-
-
     }
 
 

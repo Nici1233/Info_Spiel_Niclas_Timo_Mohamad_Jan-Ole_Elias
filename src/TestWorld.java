@@ -50,7 +50,7 @@ public class TestWorld extends World
         addObject(new Key(), 12, 3);
 
 
-
+        //addObject(new Tree(),3,3);
 
 
 

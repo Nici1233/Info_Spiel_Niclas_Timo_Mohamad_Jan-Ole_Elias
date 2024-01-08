@@ -18,25 +18,8 @@ public class Floor extends World
 
         super(16,4,60);
         setBackground("./images/Boden_4.jpg");
-        setPaintOrder(Player.class);
-
-        addObject(new Player(), 13, 3);
-
-
-        addObject(new Door(), 13, 3);
-        addObject(new Door(), 1, 3);
-
-
-        addObject(new FakeDoor(), 4, 3);
-        addObject(new FakeDoor(), 7, 3);
-        addObject(new FakeDoor(), 10, 3);
-
-
-        addObject(new FakeDoor(), 3, 0);
-        addObject(new FakeDoor(), 8, 0);
-        addObject(new FakeDoor(), 12, 0);
-
-
+        addObject(new Wall(),0,1);
+        addObject(new Wall(),0,2);
         addObject(new Wall(),0,3);
         addObject(new Wall(),2,3);
         addObject(new Wall(),3,3);
@@ -64,10 +47,29 @@ public class Floor extends World
         addObject(new Wall(),13,0);
         addObject(new Wall(),14,0);
         addObject(new Wall(),15,0);
+        setPaintOrder(Player.class);
 
 
-        addObject(new Wall(),0,1);
-        addObject(new Wall(),0,2);
+
+
+        addObject(new Door(), 13, 3);
+        addObject(new Door(), 1, 3);
+
+
+        addObject(new FakeDoor(), 4, 3);
+        addObject(new FakeDoor(), 7, 3);
+        addObject(new FakeDoor(), 10, 3);
+
+
+        addObject(new FakeDoor(), 3, 0);
+        addObject(new FakeDoor(), 8, 0);
+        addObject(new FakeDoor(), 12, 0);
+
+        addObject(new Player(), 13, 3);
+
+
+
+
     }
 
 

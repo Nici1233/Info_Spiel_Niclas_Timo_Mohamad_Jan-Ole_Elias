@@ -9,7 +9,7 @@ public class Office extends World {
         super(8, 6, 60);
         setBackground("./images/Boden_1.jpg");
         setPaintOrder(Player.class);
-        addObject(new Player(), 1, 5);
+
         for (int i = 2; i < 8; i++) {
             Wall wall = new Wall();
             addObject(wall, i, 6);
@@ -51,6 +51,7 @@ public class Office extends World {
         addObject(new Wall(), 0, 1);
 
         addObject(new Door(), 1, 0);
+        addObject(new Player(), 1, 5);
 
     }
 }

@@ -42,10 +42,13 @@ public void startPuzzle(){
             player.say("",1,1);
             query(579, "Die Ziffern sind aufeinanderfolgende, aufsteigende ungerade Zahlen, und die Summe der Ziffern beträgt 21.");
         }
-        //startSound("");
+        startSound("sounds/correct-choice.mp3");
+        player.say("Ja! Geschafft!",10,2);
+        player.say("",1,1);
         this.setImage("images/Chest_07_01.png");
         getWorld().addObject(new Pickaxt(), 7,0);
         setChestOpen(true);
+        player.say("Dann muss ich nur noch den Tresor finden...",10,1);
     }
 }
     public boolean query(int solution, String task) {

@@ -31,6 +31,7 @@ public class InventoryVisualizer extends Blockers {
     private InventorySlot createItemSlot(int i) {
         InventorySlot slot = new InventorySlot();
         getWorld().addObject(slot, i+getX(), getY());
+
         return slot;
     }
 

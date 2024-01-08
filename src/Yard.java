@@ -7,7 +7,7 @@ public class Yard extends World {
         //setBackground("./images/cell.jpg");
         setBackground("./images/concrete_Floor_3v.png");
         setPaintOrder(Player.class);
-        addObject(new Player(), 0,1);
+
         //addObject(new Chest(), 8,0);
         addObject(new Chest(),7,0);
 
@@ -23,6 +23,7 @@ public class Yard extends World {
         addObject(new Door(),3,0);
         addObject(new Wall(),2,0);
         addObject(new Wall(),4,0);
+        addObject(new Player(), 0,1);
     }
 
 

@@ -19,8 +19,7 @@ public class TestWorld extends World
         super(14, 6, 60);
         //setBackground("./images/cell.jpg");
         setBackground("./images/Boden_1.jpg");
-        setPaintOrder(Player.class);
-        addObject(new Player(), 0,1);
+
 
         addObject(new Chair(),1,1);
         addObject(new Chair(),1,2);
@@ -59,6 +58,8 @@ public class TestWorld extends World
             Wall wall = new Wall();
             addObject(wall, i, 0);
         }
+        setPaintOrder(Player.class);
+        addObject(new Player(), 0,1);
     }
     
 }

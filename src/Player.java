@@ -92,7 +92,6 @@ public class Player extends MovingActor {
                 pickables[i] = null;
                 i = pickables.length;
                 return true;
-
             }
 
         }return false;

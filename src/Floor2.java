@@ -8,7 +8,7 @@ public class Floor2 extends World {
         setBackground("./images/Boden_4.jpg");
         setPaintOrder(Player.class);
 
-        addObject(new Player(), 0, 2);
+
 
         addObject(new Door(), 2, 0);
         addObject(new Door(), 5, 3);
@@ -57,7 +57,7 @@ public class Floor2 extends World {
         addObject(new Wall(),3,1);
         addObject(new Wall(),3,2);
 
-
+        addObject(new Player(), 0, 2);
 
 
 

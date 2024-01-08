@@ -20,5 +20,6 @@ class.Tree.image=./images/Download1.png
 class.Bench.image=./images/Bench.png
 class.Safe.image=./images/Safe.png
 class.Letter.image=./images/letter.png
+class.TorchOffSide.image=./images/TorchOffSide.jpg
 project.charset=windows-1252
 simulation.speed=30

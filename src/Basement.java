@@ -45,6 +45,9 @@ public class Basement extends World{
         addObject(new Door(), 4, 5);
         addObject(new Safe(),4,2);
         addObject(new Letter(),4,3);
+
+
+
     }
 
 

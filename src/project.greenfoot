@@ -18,5 +18,7 @@ class.Teacher.image=./images/Teacher.png
 class.Pickaxt.image=./images/Pickaxe.png
 class.Tree.image=./images/Download1.png
 class.Bench.image=./images/Bench.png
+class.Safe.image=./images/Safe.png
+class.Letter.image=./images/letter.png
 project.charset=windows-1252
 simulation.speed=30

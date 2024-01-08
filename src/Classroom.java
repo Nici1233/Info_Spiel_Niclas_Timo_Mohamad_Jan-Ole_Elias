@@ -51,9 +51,6 @@ public class Classroom extends World
         addObject(new Key(), 12, 3);
         addObject(new Teacher(), 13,3 );
 
-
-
-
         for(int i=1; i<12; i++) {
             Wall wall = new Wall();
             addObject(wall, i, 0);

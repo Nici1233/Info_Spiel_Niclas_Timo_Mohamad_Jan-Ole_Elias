@@ -6,8 +6,7 @@ import greenfoot.World;
  * @author SAE
  * @version 1.0
  */
-public class Basement extends MasterLevel
-{
+public class Basement extends World{
 
 
     /**
@@ -16,11 +15,37 @@ public class Basement extends MasterLevel
      */
     public Basement()
     {
-
-        setBackground("./images/cell.jpg");
+        super(9, 6, 60);
+        setBackground("./images/concrete_Floor_3v.png");
         setPaintOrder(Player.class);
-        addObject(new Player(), 0,0);
+
+
+        addObject(new Wall(),1,5);
+        addObject(new Wall(),2,5);
+        addObject(new Wall(),3,5);
+        addObject(new Wall(),5,5);
+        addObject(new Wall(),6,5);
+        addObject(new Wall(),7,5);
+
+        for(int i=0; i<9; i++) {
+            Wall wall = new Wall();
+            addObject(wall, i, 0);
+        }
+
+        for(int i=1; i<6; i++) {
+            Wall wall = new Wall();
+            addObject(wall, 0, i);
+        }
+
+        for(int i=1; i<6; i++) {
+            Wall wall = new Wall();
+            addObject(wall, 8, i);
+        }
+
+        addObject(new Door(), 4, 5);
+        addObject(new Safe(),4,2);
+        addObject(new Letter(),4,3);
     }
-    //Test
+
 
 }

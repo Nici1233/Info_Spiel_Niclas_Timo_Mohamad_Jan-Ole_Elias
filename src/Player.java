@@ -21,7 +21,7 @@ public class Player extends MovingActor {
 
     private int life = 100;
 
-    private Pickable[] pickables = new Pickable[4];
+    private Pickable[] pickables = new Pickable[2];
 
     /*public Player(){
         puzzle1 = new ChestPuzzle();
@@ -98,21 +98,25 @@ public class Player extends MovingActor {
                 return true;
             }
 
-        }return false;
+        }
+        startSound("sounds/error-sound.mp3");
+        say("Ich glaub, ich habe was vergessen...",8,1);
+        return false;
 
     }
 
     private void checkInput() {
         if (Greenfoot.isKeyDown("enter")) {
             if (inputActive) {
+
                 String input = Greenfoot.ask("Betrachte deine Umgebung und zähle, was du siehst. (Fange mit der größten Zahl an)");
 
                 if (input != null && input.equals("511")) {
                     getWorld().showText("Korrekte Zahl! Du hast gewonnen!",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
-                    spawnKey();
+                    spawnKey(5,1);
                 } else if (input != null && input.equals("42")) {
                     getWorld().showText("Andere korrekte Zahl! Du hast gewonnen!",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
-                    spawnKey();
+                    spawnKey(1,1);
                 } else {
                     getWorld().showText("Falsche Zahl. Versuche es erneut.",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
                 }
@@ -124,9 +128,9 @@ public class Player extends MovingActor {
         }
     }
 
-    private void spawnKey() {
+    private void spawnKey(int x, int y) {
         World world = getWorld();
-        world.addObject(new Key(), getX(), getY()); // Annahme: Es gibt eine Key-Klasse
+        world.addObject(new Key(), x, y); // Annahme: Es gibt eine Key-Klasse
     }
 
     public void useDoor(){

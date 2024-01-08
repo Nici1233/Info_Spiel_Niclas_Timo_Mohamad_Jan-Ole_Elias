@@ -49,14 +49,19 @@ public class Classroom extends World
         addObject(new Wall(),14,0);
 
         addObject(new Key(), 12, 3);
-        addObject(new Teacher(), 13,3 );
+
 
         for(int i=1; i<12; i++) {
             Wall wall = new Wall();
             addObject(wall, i, 0);
         }
+
         setPaintOrder(Player.class);
+        Teacher teacher = new Teacher();
+        addObject(teacher, 13,3 );
+        teacher.turn(Direction.EAST);
         addObject(new Player(), 0,1);
+
     }
     
 }

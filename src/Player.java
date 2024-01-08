@@ -1,4 +1,3 @@
-import com.pholser.junit.quickcheck.internal.Items;
 import greenfoot.*;
 
 import java.util.List;
@@ -138,7 +137,7 @@ public class Player extends MovingActor {
     }
 
     public void goToNextWorld(){
-        if(getWorld().getClass().equals(TestWorld.class) && checkKey()) {
+        if(getWorld().getClass().equals(Classroom.class) && checkKey()) {
             Greenfoot.setWorld(new Floor());
         }
         if(getWorld().getClass().equals(Floor.class)) {

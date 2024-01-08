@@ -43,10 +43,13 @@ public class Basement extends World{
         }
 
         addObject(new Door(), 4, 5);
+
+        addObject(new Letter(),4,2);
         addObject(new Safe(),4,2);
-        addObject(new Letter(),4,3);
+        addObject(new Player(),4,4);
 
-
+        addObject(new Pickaxt(),3,3);
+        addObject(new Pickaxt(),3,4);
 
     }
 

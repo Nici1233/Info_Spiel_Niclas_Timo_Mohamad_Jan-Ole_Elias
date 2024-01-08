@@ -10,21 +10,20 @@ public class Floor2 extends World {
 
 
 
-        addObject(new Door(), 2, 0);
-        addObject(new Door(), 5, 3);
+        addObject(new Door(), 0, 3);
+        addObject(new Door(), 15, 3);
 
 
-        addObject(new FakeDoor(), 4, 3);
-        addObject(new FakeDoor(), 10, 3);
-        addObject(new FakeDoor(), 14, 3);
+        addObject(new Wall(), 4, 3);
+        addObject(new Wall(), 10, 3);
+        addObject(new Wall(), 14, 3);
 
 
-        addObject(new FakeDoor(), 2, 0);
-        addObject(new FakeDoor(), 6, 0);
-        addObject(new FakeDoor(), 11, 0);
+        addObject(new Wall(), 2, 0);
+        addObject(new Wall(), 6, 0);
+        addObject(new Wall(), 11, 0);
 
 
-        addObject(new Wall(),0,3);
         addObject(new Wall(),1,3);
         addObject(new Wall(),2,3);
         addObject(new Wall(),3,3);
@@ -36,7 +35,10 @@ public class Floor2 extends World {
         addObject(new Wall(),11,3);
         addObject(new Wall(),12,3);
         addObject(new Wall(),13,3);
-        addObject(new Wall(),15,3);
+        addObject(new TorchOff(),13,3);
+        addObject(new TorchOff(),2,3);
+        addObject(new TorchOn(),5,3);
+        addObject(new TorchOff(),10,3);
 
 
         addObject(new Wall(),0,0);
@@ -52,10 +54,11 @@ public class Floor2 extends World {
         addObject(new Wall(),13,0);
         addObject(new Wall(),14,0);
         addObject(new Wall(),15,0);
-
-
-        addObject(new Wall(),3,1);
-        addObject(new Wall(),3,2);
+        addObject(new TorchOff(),13,0);
+        addObject(new TorchOff(),2,0);
+        addObject(new TorchOff(),5,0);
+        addObject(new TorchOn(),10,0);
+        addObject(new Pickaxt(),1,2);
 
         addObject(new Player(), 0, 2);
 

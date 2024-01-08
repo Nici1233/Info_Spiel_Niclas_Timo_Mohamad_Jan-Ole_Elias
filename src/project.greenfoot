@@ -1,5 +1,7 @@
 #Greenfoot project file
 class.Player.image=./images/Player/WEST0_1.png
+class.TorchOn.image=./images/TorchOn.jpg
+class.TorchOff.image=./images/TorchOff.jpg
 class.Chair.image=./images/Chair.png
 class.ChairDown.image=./images/ChairDown.png
 class.Door.image=./images/DoorClose.png

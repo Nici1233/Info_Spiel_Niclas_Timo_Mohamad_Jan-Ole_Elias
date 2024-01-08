@@ -16,6 +16,9 @@ public class Player extends MovingActor {
 
     private int vaultlife;
 
+    private boolean hasKey = false;
+    private boolean inputActive = true;
+
     private int life = 100;
 
     private Pickable[] pickables = new Pickable[4];
@@ -98,6 +101,34 @@ public class Player extends MovingActor {
 
     }
 
+    private void checkInput() {
+        if (Greenfoot.isKeyDown("enter")) {
+            if (inputActive) {
+                String input = Greenfoot.ask("Gib die Zahlenkombination ein:");
+
+                if (input != null && input.equals("511")) {
+                    getWorld().showText("Korrekte Zahl! Du hast gewonnen!",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+                    spawnKey();
+                } else if (input != null && input.equals("42")) {  // Alternative Zahl (43) hinzugefügt
+                    getWorld().showText("Andere korrekte Zahl! Du hast gewonnen!",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+                    spawnKey();
+                    // Füge hier ggf. weitere Aktionen für die alternative Zahl hinzu
+                } else {
+                    getWorld().showText("Falsche Zahl. Versuche es erneut.",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+                }
+
+                inputActive = false;
+            } else {
+                inputActive = true;
+            }
+        }
+    }
+
+    private void spawnKey() {
+        World world = getWorld();
+        world.addObject(new Key(), getX(), getY()); // Annahme: Es gibt eine Key-Klasse
+    }
+
     public void useDoor(){
         World myWorld = getWorld();
         List<Door> objectlist = myWorld.getObjectsAt(getX() , getY() , Door.class);
@@ -165,6 +196,7 @@ public class Player extends MovingActor {
 
     public void act() {
         performMovement();
+        checkInput();
     }
 
     private void performMovement() {

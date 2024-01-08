@@ -49,7 +49,6 @@ public class Basement extends World{
         addObject(new Player(),4,4);
 
         addObject(new Pickaxt(),3,3);
-        addObject(new Pickaxt(),3,4);
 
     }
 

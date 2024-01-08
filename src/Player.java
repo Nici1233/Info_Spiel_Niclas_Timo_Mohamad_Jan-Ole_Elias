@@ -224,7 +224,6 @@ public class Player extends MovingActor {
         }
         if (Greenfoot.isKeyDown("E")) {
             pick();
-
             useDoor();
             useChest();
         }
@@ -235,10 +234,10 @@ public class Player extends MovingActor {
 
     public void punchSafe() {
         World myWorld = getWorld(); // Standort in der Welt
-        List<Safe> safes = myWorld.getObjectsAt(getNextX(1), getNextY(1), Safe.class); // erstellen einer Liste, Datentyp rock, Standtort von rocks
-        if (safes.size() > 0) {       // Wenn eine Karrote vorhanden ist
-            Safe safe = safes.get(0); // bezug auf Liste; carrot gleich null setzen
-            safe.setLife(safe.getLife() - 5);
+        List<Safe> safes = myWorld.getObjectsAt(getNextX(1), getNextY(1), Safe.class);
+        if (safes.size() > 0) {
+            Safe safe = safes.get(0);
+            safe.setLife(safe.getLife() - 10);
             if (safe.getLife() == 0) {
                 myWorld.removeObject(safe);
             }

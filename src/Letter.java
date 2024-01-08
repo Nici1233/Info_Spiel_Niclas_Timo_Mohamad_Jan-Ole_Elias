@@ -1,2 +1,2 @@
-public class Letter extends Pickable{
+public class Letter extends Blockers{
         }

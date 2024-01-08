@@ -240,6 +240,7 @@ public class Player extends MovingActor {
             safe.setLife(safe.getLife() - 10);
             if (safe.getLife() == 0) {
                 myWorld.removeObject(safe);
+                getWorld().showText("Herzlichen Glückwunsch, sie haben ihr Abitur bestanden",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
             }
         }
     }

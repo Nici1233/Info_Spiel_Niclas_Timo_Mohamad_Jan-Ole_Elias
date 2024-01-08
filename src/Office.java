@@ -45,7 +45,7 @@ public class Office extends World {
         }
 
 
-        addObject(new Wall(), 1, 0);
+
 
         addObject(new Wall(), 0, 2);
         addObject(new Wall(), 0, 1);

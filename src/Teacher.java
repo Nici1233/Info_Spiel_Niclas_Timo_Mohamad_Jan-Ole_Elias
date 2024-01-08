@@ -1,11 +1,14 @@
+import java.util.List;
+
 public class Teacher extends MovingActor {
 
     private int life = 100;
     private boolean introCompleted = false;
     public void act(){
         if (!introCompleted) {
-            turn(Direction.EAST);
-
+            //List<Player> objectlist = getWorld().getObjects(Player.class);
+           // Player player = objectlist.get(0);
+            //player.say("Hallo",8,1);
             say("Schön, dass Sie es auch mal geschafft haben.",8);
             say("Sie können sich gerne setzen.",8);
             say(" Ihre Aufgabe für heute ist es,",8);

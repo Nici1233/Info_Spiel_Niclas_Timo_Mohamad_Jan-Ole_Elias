@@ -23,7 +23,10 @@ public class Yard extends World {
         addObject(new Door(),3,0);
         addObject(new Wall(),2,0);
         addObject(new Wall(),4,0);
-        addObject(new Player(), 0,1);
+        addObject(new Wall(), 3,3);
+        addObject(new Wall(), 4,3);
+        addObject(new Wall(), 5,3);
+        addObject(new Player(), 0,0);
     }
 
 

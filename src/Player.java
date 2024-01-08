@@ -1,3 +1,4 @@
+import com.pholser.junit.quickcheck.internal.Items;
 import greenfoot.*;
 
 import java.util.List;
@@ -55,9 +56,9 @@ public class Player extends MovingActor {
     }
 
 
-    public void keyPick(){
+    public void pick(){
         World myWorld = getWorld();
-        List<Pickable> objectlist = myWorld.getObjectsAt(getX() +1, getY(), Pickable.class);
+        List<Pickable> objectlist = getNeighbours(1,true,Pickable.class);
         if (objectlist.size() > 0) {
             Pickable pickable = objectlist.get(0);
             for (int i = 0; i < pickables.length; i++) {
@@ -83,6 +84,7 @@ public class Player extends MovingActor {
 
         }
         startSound("sounds/error-sound.mp3");
+        say("Mist, die ist verschlossen!",8,1);
         return false;
 
     }
@@ -142,15 +144,15 @@ public class Player extends MovingActor {
         }
         if(getWorld().getClass().equals(Floor.class)) {
             Greenfoot.setWorld(new Office());
-            startSound("./images/OfficeCall.mp3");
+            startSound("./sounds/OfficeCall.mp3");
         }
-        if(getWorld().getClass().equals(Office.class) /*&& checkKey()*/) {
+        if(getWorld().getClass().equals(Office.class) && checkKey()) {
             Greenfoot.setWorld(new Yard());
         }
 
-        /*if(getWorld().getClass().equals(Yard.class) && checkKey()) {
+        if(getWorld().getClass().equals(Yard.class) && checkPickaxe()) {
             Greenfoot.setWorld(new Floor2());
-        }*/
+        }
 
     }
 
@@ -217,7 +219,7 @@ public class Player extends MovingActor {
             move();
         }
         if (Greenfoot.isKeyDown("E")) {
-            keyPick();
+            pick();
 
             useDoor();
             useChest();

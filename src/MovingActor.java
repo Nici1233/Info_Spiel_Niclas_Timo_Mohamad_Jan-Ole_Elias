@@ -178,7 +178,7 @@ public class MovingActor extends ImprovedActor {
         getWorld().showText(text, getX()-xCorrection, y);
         System.out.println("a " + this.getClass().getName() + " says: " + text);
         Greenfoot.delay(delay);
-        getWorld().showText("", getX()-3, y);
+        getWorld().showText("", getX()-xCorrection, y);
 
     }
     /*public void sayIndividual(String text, int delay, int fontSize) {

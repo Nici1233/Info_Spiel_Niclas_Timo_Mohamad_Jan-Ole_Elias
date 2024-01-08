@@ -47,6 +47,7 @@ public class Floor extends World
         addObject(new Wall(),13,0);
         addObject(new Wall(),14,0);
         addObject(new Wall(),15,0);
+        addObject(new Wall(), 7,3);
         setPaintOrder(Player.class);
 
 

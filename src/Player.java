@@ -79,7 +79,9 @@ public class Player extends MovingActor {
 
             }
 
-        }return false;
+        }
+        startSound("sounds/error-sound.mp3");
+        return false;
 
     }
     public boolean checkPickaxe(){

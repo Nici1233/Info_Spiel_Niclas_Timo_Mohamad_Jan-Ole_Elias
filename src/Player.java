@@ -104,15 +104,14 @@ public class Player extends MovingActor {
     private void checkInput() {
         if (Greenfoot.isKeyDown("enter")) {
             if (inputActive) {
-                String input = Greenfoot.ask("Gib die Zahlenkombination ein:");
+                String input = Greenfoot.ask("Betrachte deine Umgebung und zähle, was du siehst. (Fange mit der größten Zahl an)");
 
                 if (input != null && input.equals("511")) {
                     getWorld().showText("Korrekte Zahl! Du hast gewonnen!",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
                     spawnKey();
-                } else if (input != null && input.equals("42")) {  // Alternative Zahl (43) hinzugefügt
+                } else if (input != null && input.equals("42")) {
                     getWorld().showText("Andere korrekte Zahl! Du hast gewonnen!",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
                     spawnKey();
-                    // Füge hier ggf. weitere Aktionen für die alternative Zahl hinzu
                 } else {
                     getWorld().showText("Falsche Zahl. Versuche es erneut.",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
                 }

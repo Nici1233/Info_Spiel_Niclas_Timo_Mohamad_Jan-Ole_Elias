@@ -58,9 +58,9 @@ public class Floor2 extends World {
         addObject(new TorchOff(),2,0);
         addObject(new TorchOff(),5,0);
         addObject(new TorchOn(),10,0);
+        addObject(new Pickaxt(),0,2);
 
-
-        addObject(new Player(), 0, 2);
+        addObject(new Player(), 0, 3);
 
 
 

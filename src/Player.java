@@ -84,7 +84,7 @@ public class Player extends MovingActor {
 
         }
         startSound("sounds/error-sound.mp3");
-        say("Mist, die ist verschlossen!",8,1);
+        say("Mist, die ist verschlossen!",5,1);
         return false;
 
     }
@@ -99,26 +99,51 @@ public class Player extends MovingActor {
             }
 
         }
-        startSound("sounds/error-sound.mp3");
-        say("Ich glaub, ich habe was vergessen...",8,1);
+        if(!getWorld().getClass().equals(Basement.class)){
+            startSound("sounds/error-sound.mp3");
+            say("Ich glaub, ich habe was vergessen...", 5, 1);
+        }
         return false;
 
     }
 
     private void checkInput() {
-        if (Greenfoot.isKeyDown("enter")) {
+        if (Greenfoot.isKeyDown("Q") && (getWorld().getClass().equals(Office.class))) {
             if (inputActive) {
 
-                String input = Greenfoot.ask("Betrachte deine Umgebung und zähle, was du siehst. (Fange mit der größten Zahl an)");
-
+                String input = Greenfoot.ask("Ich sehe was was du nicht siehst");
                 if (input != null && input.equals("511")) {
-                    getWorld().showText("Korrekte Zahl! Du hast gewonnen!",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+                    say("Der ist wohl richtig!",8, 1);
                     spawnKey(5,1);
-                } else if (input != null && input.equals("42")) {
-                    getWorld().showText("Andere korrekte Zahl! Du hast gewonnen!",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
-                    spawnKey(1,1);
+                    startSound("sounds/correct-choice.mp3");
                 } else {
-                    getWorld().showText("Falsche Zahl. Versuche es erneut.",getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+                    say("Mist falsch! Aber wieviel liegt da eigentlich rum?",8, 1);
+                    startSound("sounds/error-sound.mp3");
+                }
+
+                inputActive = false;
+            } else {
+                inputActive = true;
+            }
+        }
+    }
+
+    private void checkInput1() {
+        if (Greenfoot.isKeyDown("Q") && (getWorld().getClass().equals(Floor2.class))) {
+            if (inputActive) {
+
+                String input = Greenfoot.ask("Licht scheint manchmal unscheinbar");
+                if (input != null && input.equals("42")) {
+                    say("Super! Geschafft! Dahinten ist auch schon der Schlüssel",8, 1);
+                    say("",1,1);
+                    spawnKey(1,1);
+                    startSound("sounds/correct-choice.mp3");
+                } else {
+                    say("Mist, dass war wohl falsch... ",8, 1);
+
+                    say("Aber wieso sind manche Fackeln aus und andere an?", 8,1);
+                    say("",1,1);
+                    startSound("sounds/error-sound.mp3");
                 }
 
                 inputActive = false;
@@ -149,6 +174,7 @@ public class Player extends MovingActor {
         if(getWorld().getClass().equals(Floor.class)) {
             Greenfoot.setWorld(new Office());
             startSound("./sounds/OfficeCall.mp3");
+
         }
         if(getWorld().getClass().equals(Office.class) && checkKey()) {
             Greenfoot.setWorld(new Yard());
@@ -156,6 +182,12 @@ public class Player extends MovingActor {
 
         if(getWorld().getClass().equals(Yard.class) && checkPickaxe()) {
             Greenfoot.setWorld(new Floor2());
+            pick();
+
+
+        }
+        if(getWorld().getClass().equals(Floor2.class) && checkKey()) {
+            Greenfoot.setWorld(new Basement());
         }
 
     }
@@ -182,18 +214,7 @@ public class Player extends MovingActor {
         }
     }
 
-    /*public void destroyVault() {
-        World myWorld = getWorld();
-        List<Vault> vaults = myWorld.getObjectsAt(getNextX(1), getNextY(1), Vault.class);
-        if (vaultlife < 1) {
-            if (vaults.size() > 0) {
-                Vault vault = vaults.get(0);
-                vault.setVaultLife(vault.getVaultLife() - 1);
-                //if (vault.getVaultLife() <= 0)
-                //myWorld.removeObject(vault);
-            }
-        }
-    }*/
+
 
 
 
@@ -201,6 +222,7 @@ public class Player extends MovingActor {
     public void act() {
         performMovement();
         checkInput();
+        checkInput1();
     }
 
     private void performMovement() {
@@ -227,7 +249,7 @@ public class Player extends MovingActor {
             useDoor();
             useChest();
         }
-        if (Greenfoot.isKeyDown("P") && checkPickaxe()) {
+        if (Greenfoot.isKeyDown("P") && checkPickaxe() && getWorld().getClass().equals(Basement.class)  ) {
             punchSafe();
         }
     }
